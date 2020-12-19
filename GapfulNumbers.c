@@ -45,3 +45,38 @@ int main()
 
     return 0;
 }
+
+/*--------------------------And if you wanna see the first fifty gapful number--------------------------*/
+
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{   int counter = 0;
+    int a = 100;
+    while(counter<50)
+    {
+      int first=0,last=0,temp=a;
+    while(a>0)
+    {   if(last==0)
+        {
+            first = a%10;
+            last = 10;
+        }
+        a = a/10;
+
+        if(a<10 && a>0)
+        {
+            last = a;
+        }
+    }
+    if(temp %(first+10*last)==0)
+        {
+            printf("%d. : %d\n",counter+1,temp);
+            counter++;
+        }
+          a = temp + 1;
+    }
+
+    return 0;
+}
+
